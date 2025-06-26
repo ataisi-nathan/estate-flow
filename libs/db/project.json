@@ -1,0 +1,35 @@
+{
+  "name": "db",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "libs/db", // <--- ADDED THIS ROOT PATH
+  "sourceRoot": "libs/db/src", // <--- Corrected for absolute workspace path reference
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/db",
+        "tsConfig": "libs/db/tsconfig.lib.json",
+        "packageJson": "libs/db/package.json",
+        "main": "libs/db/src/index.ts",
+        "assets": ["libs/db/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/db/**/*.ts", "libs/db/**/*.js"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/db/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

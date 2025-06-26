@@ -1,0 +1,10 @@
+{
+  "name": "@estate-flow/estate-flow-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@estate-flow/estate-flow"
+    ]
+  }
+}

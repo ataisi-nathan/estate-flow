@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2020", "dom", "dom.iterable"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@estate-flow/auth": ["libs/auth/src/index.ts"],
+      "@estate-flow/db": ["libs/db/src/index.ts"],
+      "@estate-flow/estate-flow/api": ["apps/estate-flow/src/app/api/index.ts"],
+      "@estate-flow/shared/db": ["shared/src/index.ts"],
+      "@estate-flow/types": ["libs/types/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
