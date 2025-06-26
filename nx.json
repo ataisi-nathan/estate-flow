@@ -14,18 +14,13 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "6853b1789fc49c280340d04c",
-  "workspaceLayout": {
-    "appsDir": "apps",
-    "libsDir": "libs"
-  },
+  "nxCloudId": "685dce983910060cfa68906f",
+  "workspaceLayout": { "appsDir": "apps", "libsDir": "libs" },
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
+        "typecheck": { "targetName": "typecheck" },
         "build": {
           "targetName": "build",
           "configName": "tsconfig.lib.json",
@@ -46,32 +41,16 @@
         "watchDepsTargetName": "watch-deps"
       }
     },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
     {
       "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      },
+      "options": { "targetName": "test" },
       "exclude": ["auth-service-e2e/**/*", "tenant-service-e2e/**/*"]
     },
     {
       "plugin": "@nx/js/typescript",
-      "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        }
-      }
+      "options": { "typecheck": { "targetName": "typecheck" } }
     },
     {
       "plugin": "@nx/vite/plugin",
@@ -98,18 +77,9 @@
       }
     }
   ],
-  "targetDefaults": {
-    "test": {
-      "dependsOn": ["^build"]
-    }
-  },
+  "targetDefaults": { "test": { "dependsOn": ["^build"] } },
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    }
+    "@nx/next": { "application": { "style": "scss", "linter": "eslint" } }
   },
   "projects": {
     "estate-flow": {
@@ -121,23 +91,16 @@
           "executor": "@nx/next:build",
           "outputs": ["{options.outputPath}"],
           "defaultConfiguration": "production",
-          "options": {
-            "outputPath": "dist/apps/estate-flow"
-          },
+          "options": { "outputPath": "dist/apps/estate-flow" },
           "configurations": {
-            "development": {
-              "outputPath": "apps/estate-flow"
-            },
+            "development": { "outputPath": "apps/estate-flow" },
             "production": {}
           }
         },
         "serve": {
           "executor": "@nx/next:server",
           "defaultConfiguration": "development",
-          "options": {
-            "buildTarget": "estate-flow:build",
-            "dev": true
-          },
+          "options": { "buildTarget": "estate-flow:build", "dev": true },
           "configurations": {
             "development": {
               "buildTarget": "estate-flow:build:development",
@@ -151,19 +114,13 @@
         },
         "start": {
           "executor": "@nx/next:start",
-          "options": {
-            "buildTarget": "estate-flow:build"
-          }
+          "options": { "buildTarget": "estate-flow:build" }
         },
-        "lint": {
-          "executor": "@nx/eslint:lint"
-        },
+        "lint": { "executor": "@nx/eslint:lint" },
         "test": {
           "executor": "@nx/jest:jest",
           "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-          "options": {
-            "jestConfig": "apps/estate-flow/jest.config.ts"
-          }
+          "options": { "jestConfig": "apps/estate-flow/jest.config.ts" }
         }
       }
     },
@@ -175,13 +132,9 @@
         "e2e": {
           "executor": "@nx/playwright:playwright",
           "outputs": ["{workspaceRoot}/dist/.playwright/apps/estate-flow-e2e"],
-          "options": {
-            "config": "apps/estate-flow-e2e/playwright.config.ts"
-          }
+          "options": { "config": "apps/estate-flow-e2e/playwright.config.ts" }
         },
-        "lint": {
-          "executor": "@nx/eslint:lint"
-        }
+        "lint": { "executor": "@nx/eslint:lint" }
       }
     },
     "auth": {
@@ -200,15 +153,11 @@
             "assets": ["libs/auth/*.md"]
           }
         },
-        "lint": {
-          "executor": "@nx/eslint:lint"
-        },
+        "lint": { "executor": "@nx/eslint:lint" },
         "test": {
           "executor": "@nx/jest:jest",
           "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-          "options": {
-            "jestConfig": "libs/auth/jest.config.ts"
-          }
+          "options": { "jestConfig": "libs/auth/jest.config.ts" }
         }
       }
     },
@@ -228,15 +177,11 @@
             "assets": ["libs/db/*.md"]
           }
         },
-        "lint": {
-          "executor": "@nx/eslint:lint"
-        },
+        "lint": { "executor": "@nx/eslint:lint" },
         "test": {
           "executor": "@nx/jest:jest",
           "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-          "options": {
-            "jestConfig": "libs/db/jest.config.ts"
-          }
+          "options": { "jestConfig": "libs/db/jest.config.ts" }
         }
       }
     },
@@ -256,15 +201,11 @@
             "assets": ["libs/types/*.md"]
           }
         },
-        "lint": {
-          "executor": "@nx/eslint:lint"
-        },
+        "lint": { "executor": "@nx/eslint:lint" },
         "test": {
           "executor": "@nx/jest:jest",
           "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-          "options": {
-            "jestConfig": "libs/types/jest.config.ts"
-          }
+          "options": { "jestConfig": "libs/types/jest.config.ts" }
         }
       }
     }
